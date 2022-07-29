@@ -77,7 +77,7 @@ class MyWindow(Gtk.Window):
 
 def kopi(button, im_id):
     url = f"https://cdn.frankerfacez.com/emoticon/{im_id}/2"
-    sp.run(f"convert {url} -resize 48x48 png:- | xclip -selection clipboard -t image/png", shell=True)
+    sp.run(f"convert {url} -filter catrom -unsharp 2 -resize x48 png:- | xclip -selection clipboard -t image/png", shell=True)
     Gtk.main_quit()
 
 def get_image(e):
